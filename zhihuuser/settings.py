@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for Zhihu project
+# Scrapy settings for zhihuuser project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,10 +9,10 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'zhihu'
+BOT_NAME = 'zhihuuser'
 
-SPIDER_MODULES = ['zhihu.spiders']
-NEWSPIDER_MODULE = 'zhihu.spiders'
+SPIDER_MODULES = ['zhihuuser.spiders']
+NEWSPIDER_MODULE = 'zhihuuser.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 # USER_AGENT = 'zhihu (+http://www.yourdomain.com)'
@@ -46,7 +46,7 @@ DEFAULT_REQUEST_HEADERS = {
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 # SPIDER_MIDDLEWARES = {
-#    'Zhihu.middlewares.ZhihuSpiderMiddleware': 543,
+#    'zhihuuser.middlewares.ZhihuSpiderMiddleware': 543,
 # }
 
 # SPIDER_MIDDLEWARES = {
@@ -56,7 +56,7 @@ DEFAULT_REQUEST_HEADERS = {
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 # DOWNLOADER_MIDDLEWARES = {
-#    'Zhihu.middlewares.MyCustomDownloaderMiddleware': 543,
+#    'zhihuuser.middlewares.MyCustomDownloaderMiddleware': 543,
 # }
 
 # DOWNLOADER_MIDDLEWARES = {
@@ -74,7 +74,7 @@ DEFAULT_REQUEST_HEADERS = {
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'zhihu.pipelines.MongoPipeline': 300,
+    'zhihuuser.pipelines.MongoPipeline': 300,
     # 'scrapy_redis.pipelines.RedisPipeline': 301
 }
 
@@ -110,7 +110,5 @@ MONGO_DATABASE = 'zhihu'
 # SCHEDULER = "scrapy_redis.scheduler.Scheduler"
 
 # DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
-
-# REDIS_URL = 'redis://root:940629cqc@120.27.34.24:6379'
 
 # SCHEDULER_FLUSH_ON_START = True
