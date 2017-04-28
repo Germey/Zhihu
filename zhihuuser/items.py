@@ -66,3 +66,6 @@ class AnswerItem(Item):
     created = Field()
     author = Field()
     question = Field()
+    comment_count = Field()
+    voteup_count = Field()
+    thumbnail = Field()
