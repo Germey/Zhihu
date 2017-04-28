@@ -113,6 +113,8 @@ SCHEDULER = "scrapy_redis.scheduler.Scheduler"
 
 DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
 
-REDIS_URL = 'redis://user:pass@hostname:9001'
+REDIS_HOST = 'localhost'
+
+REDIS_PORT = 6379
 
 # SCHEDULER_FLUSH_ON_START = True
