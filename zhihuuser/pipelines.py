@@ -6,6 +6,8 @@
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 import pymongo
 
+from zhihuuser.items import UserItem, QuestionItem, AnswerItem
+
 
 class ZhihuPipeline(object):
     def process_item(self, item, spider):
@@ -13,7 +15,6 @@ class ZhihuPipeline(object):
 
 
 class MongoPipeline(object):
-    collection_name = 'users'
 
     def __init__(self, mongo_uri, mongo_db):
         self.mongo_uri = mongo_uri
@@ -34,5 +35,11 @@ class MongoPipeline(object):
         self.client.close()
 
     def process_item(self, item, spider):
-        self.db[self.collection_name].update({'url_token': item['url_token']}, dict(item), True)
+
+        if isinstance(item, UserItem):
+            self.db['users'].update({'url_token': item['url_token']}, {'$set': dict(item)}, True)
+        elif isinstance(item, QuestionItem):
+            self.db['questions'].update({'id': item['id']}, {'$set': dict(item)}, True)
+        elif isinstance(item, AnswerItem):
+            self.db['answers'].update({'id': item['id']}, {'$set': dict(item)}, True)
         return item

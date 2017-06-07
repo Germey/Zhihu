@@ -55,9 +55,10 @@ DEFAULT_REQUEST_HEADERS = {
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
-# DOWNLOADER_MIDDLEWARES = {
-#    'zhihuuser.middlewares.MyCustomDownloaderMiddleware': 543,
-# }
+DOWNLOADER_MIDDLEWARES = {
+   'zhihuuser.middlewares.ProxyMiddleware': 543,
+    'scrapy.downloadermiddlewares.retry.RetryMiddleware': None
+}
 
 # DOWNLOADER_MIDDLEWARES = {
 #     'scrapy_splash.SplashCookiesMiddleware': 723,
@@ -105,10 +106,15 @@ ITEM_PIPELINES = {
 # SPLASH_URL = 'http://192.168.99.100:8050'
 
 MONGO_URI = 'localhost'
+
 MONGO_DATABASE = 'zhihu'
 
-# SCHEDULER = "scrapy_redis.scheduler.Scheduler"
+SCHEDULER = "scrapy_redis.scheduler.Scheduler"
 
-# DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
+DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
+
+REDIS_HOST = 'localhost'
+
+REDIS_PORT = 6379
 
 # SCHEDULER_FLUSH_ON_START = True

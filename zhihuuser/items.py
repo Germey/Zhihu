@@ -50,3 +50,22 @@ class UserItem(Item):
     educations = Field()
     employments = Field()
 
+
+class QuestionItem(Item):
+    id = Field()
+    title = Field()
+    url = Field()
+    created = Field()
+    type = Field()
+
+
+class AnswerItem(Item):
+    id = Field()
+    content = Field()
+    url = Field()
+    created = Field()
+    author = Field()
+    question = Field()
+    comment_count = Field()
+    voteup_count = Field()
+    thumbnail = Field()
