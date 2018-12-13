@@ -14,7 +14,7 @@ class ZhihuSpiderMiddleware(object):
     # passed objects.
 
     @classmethod
-    def from_crawler(self,cls, crawler):
+    def from_crawler(cls, crawler):
         # This method is used by Scrapy to create your spiders.
         s = cls()
         crawler.signals.connect(s.spider_opened, signal=signals.spider_opened)
